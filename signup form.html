@@ -1,0 +1,34 @@
+<?php
+
+$server = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ASHOK";
+
+$conn = mysqli_connect($server, $username, $password, $dbname);
+
+if (!$conn) {
+    echo "not connected";
+}
+
+else {
+    echo "connected";
+}   
+
+
+$name  =$_post['name'];
+$age =$_post['age'];
+$dob =$_post['dob'];
+$case_details =$_post['case_details'];
+
+$sql ="INSERT INTO `test`(`Name`, `Age`, `Date of birth`, `Case Details`) VALUES ('$name','$age','$dob','$case_details')";
+
+$result = mysqli_query($conn, $sql);
+if (!result) {
+    echo "data submitted";    
+}
+else
+    {
+        echo "queery failed......!";
+    }
+    
